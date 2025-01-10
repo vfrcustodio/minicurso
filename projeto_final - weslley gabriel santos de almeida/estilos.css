@@ -1,0 +1,326 @@
+/* Definir box-sizing para evitar overflow inesperado */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+#fundo_topo, #fundo_rodape {
+    width: 100%;
+    background: #005F9E;
+}
+
+#topo, #rodape {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 800px;
+    height: 90px;
+    font-size: 36px;
+    color: #89CFF0;
+    text-align: center;
+}
+
+#logo {
+    width: 100px;
+    height: 90px;
+    float: left;
+    margin-right: 50px;
+}
+
+#fundo_conteudo {
+    width: 100%;
+    padding: 50px 0;
+    background-color: #f1f1f1;
+}
+
+#conteudo {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 10px; /* Adicionar um padding lateral para garantir que o conteúdo não fique grudado na borda */
+}
+
+/* Centralizar o conteúdo do quadrado com o texto */
+#quadrado_com_texto {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centralizar o conteúdo horizontalmente */
+    text-align: center; /* Centralizar o texto */
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+#quadrado {
+    width: 100px;
+    height: 100px;
+    background-color: #89CFF0;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    display: inline-block; /* Fazer o quadrado se comportar como um bloco inline */
+}
+
+#quadrado img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#texto {
+    font-size: 18px;
+    color: #333;
+}
+
+#botao_saiba_mais {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #89CFF0;
+    color: white;
+    text-decoration: none;
+    border-radius: 0px;
+}
+
+#botao_saiba_mais:hover {
+    background-color: #6fa9d0;
+}
+
+#quadrados_com_legenda {
+    display: flex;
+    justify-content: center; /* Centralizar os quadrados */
+    flex-wrap: wrap;
+}
+
+.texto_rodape {
+    font-size: 18px;
+    color: BLACK;
+    text-align: center;
+}
+
+.quadrado_com_legenda {
+    text-align: center;
+    width: 30%;
+    margin: 10px auto; /* Centralizar o item */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centralizar o conteúdo dentro de cada item */
+}
+
+.quadrado {
+    width: 100%;
+    max-width: 80px;
+    height: 80px;
+    background-color: #89CFF0;
+    margin-bottom: 10px;
+}
+
+.quadrado img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.quadrado_com_legenda p {
+    font-size: 16px;
+    color: #333;
+}
+
+#logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Estilos do Menu */
+#menu {
+    width: 100%;
+    background-color: #333;
+    position: relative;
+    top: 0;
+}
+
+#menu ul {
+    display: flex;
+    justify-content: center; /* Centralizar o menu */
+    padding: 0;
+    list-style: none;
+    margin: 0;
+    flex-wrap: wrap;
+}
+
+#menu ul li {
+    padding: 15px 25px;
+}
+
+#menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+    display: block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+#menu ul li a:hover {
+    background-color: #4CAF50;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+#menu ul li a:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #4CAF50;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+#menu ul li a:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Responsividade para dispositivos menores */
+@media (max-width: 1024px) {
+    #topo, #rodape {
+        font-size: 32px;
+        padding: 20px 0;
+    }
+
+    #logo {
+        width: 90px;
+        margin-right: 20px;
+    }
+
+    #conteudo {
+        width: 100%; /* Garantir que o conteúdo não ultrapasse a tela */
+    }
+
+    #quadrado_com_texto {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #quadrado {
+        width: 150px;  /* Aumentei mais o tamanho do quadrado */
+        height: 150px;
+        margin-bottom: 10px;
+    }
+
+    #quadrados_com_legenda {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; /* Centralizar os quadrados */
+    }
+
+    .quadrado_com_legenda {
+        width: 80%;
+        margin: 10px auto;
+    }
+
+    #menu ul {
+        flex-direction: column;
+    }
+
+    #menu ul li {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    #topo, #rodape {
+        font-size: 28px;
+        padding: 15px 0;
+    }
+
+    #logo {
+        width: 80px;
+        margin-right: 10px;
+    }
+
+    #conteudo {
+        width: 95%; /* Garantir que o conteúdo não fique largo demais */
+    }
+
+    #quadrado_com_texto {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #quadrado {
+        width: 140px;  /* Aumentei o tamanho do quadrado */
+        height: 140px;
+        margin-bottom: 10px;
+    }
+
+    #quadrados_com_legenda {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; /* Centralizar os quadrados */
+    }
+
+    .quadrado_com_legenda {
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    #menu ul {
+        flex-direction: column;
+    }
+
+    #menu ul li {
+        width: 100%;
+        text-align: center;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    #topo, #rodape {
+        font-size: 24px;
+        padding: 15px 0;
+    }
+
+    #logo {
+        width: 60px;
+    }
+
+    #menu ul li {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    #menu ul li a {
+        padding: 8px 10px;
+    }
+
+    #quadrados_com_legenda {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; /* Centralizar os quadrados */
+    }
+
+    .quadrado_com_legenda {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .quadrado {
+        width: 150px;  /* Aumentei ainda mais o tamanho do quadrado */
+        height: 150px;
+    }
+}
